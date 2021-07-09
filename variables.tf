@@ -12,6 +12,12 @@ variable "cluster_version" {
   default     = "1.17"
 }
 
+variable "create_vault_resources" {
+  description = "Flag to enable or disable the creation of Vault resources by Terraform"
+  type        = bool
+  default     = true
+}
+
 variable "vault_user" {
   description = "The AWS IAM Username whose credentials will be used to authenticate the Vault pods against AWS"
   type        = string
@@ -49,4 +55,34 @@ variable "jx_bot_username" {
 variable "jx_bot_token" {
   description = "Bot token used to interact with the Jenkins X cluster git repository"
   type        = string
+}
+
+variable "enable_external_dns" {
+  description = "Flag to enable or disable External DNS in the final `jx-requirements.yml` file"
+  type        = bool
+  default     = true
+}
+
+variable "apex_domain" {
+  description = "Flag to enable or disable long term storage for logs"
+  type        = string
+  default     = "blubitoapps.com"
+}
+
+variable "enable_tls" {
+  description = "Flag to enable TLS int he final `jx-requirements.yml` file"
+  type        = bool
+  default     = true
+}
+
+variable "production_letsencrypt" {
+  description = "Flag to use the production environment of letsencrypt in the `jx-requirements.yml` file"
+  type        = bool
+  default     = true
+}
+
+variable "tls_email" {
+  description = "The email to register the LetsEncrypt certificate with. Added to the `jx-requirements.yml` file"
+  type        = string
+  default     = "k.gocheva@blubito.com"
 }
