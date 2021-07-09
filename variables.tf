@@ -12,11 +12,6 @@ variable "cluster_version" {
   default     = "1.17"
 }
 
-variable "create_vault_resources" {
-  description = "Flag to enable or disable the creation of Vault resources by Terraform"
-  type        = bool
-  default     = true
-}
 
 variable "vault_user" {
   description = "The AWS IAM Username whose credentials will be used to authenticate the Vault pods against AWS"
