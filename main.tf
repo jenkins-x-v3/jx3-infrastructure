@@ -3,7 +3,6 @@ module "eks-jx" {
   cluster_name    = var.cluster_name
   cluster_version = var.cluster_version
   region          = var.region 
-  create_vault_resources = var.create_vault_resources
   vault_user      = var.vault_user
   is_jx2          = false
   jx_git_url      = var.jx_git_url
